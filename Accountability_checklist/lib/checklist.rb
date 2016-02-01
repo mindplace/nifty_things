@@ -19,7 +19,7 @@ class Checklist
         file_name = "lists/" + username + "_tracker.txt"
         date = Time.now.to_s.split[0].split("-").reverse.join("-")
         File.open(file_name, "a") do |line|
-            line.puts "[#{date}, #{standards_met}, #{standards_unmet}]"
+            line.puts "[#{date.to_sym}, #{standards_met}, #{standards_unmet}]"
         end
     end
     

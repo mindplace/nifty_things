@@ -9,7 +9,8 @@ def show_data(username)
         data = DataParsing.new(username)
         data.parse
     end
-    puts "\nHave a great evening :)"
+    puts "\nYour data is in the folder 'lists', titled 'data_#{username}.txt'."
+    puts "Have a great evening :)"
 end
 
 def daily_review
@@ -30,4 +31,5 @@ def daily_review
     show_data(username)
 end
 
-daily_review
+#daily_review
+show_data("mindplace")
