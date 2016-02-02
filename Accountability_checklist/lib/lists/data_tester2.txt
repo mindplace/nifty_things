@@ -1,0 +1,15 @@
+02/02/2016
+Data date range: 02/02/2016 - 02/02/2016
+
+ ~ Accountability standards:
+
+debug this program
+drink all the tea
+type all the words
+
+
+ ~ Review of daily checklists by item:
+
+x |     100.0% | debug this program
+_ |         0% | drink all the tea
+_ |         0% | type all the words

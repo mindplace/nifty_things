@@ -19,29 +19,24 @@ class CreateList
         end
     end
 
-    def put_list
-        list.each_with_index do |item, i|
-	       puts "#{i + 1}. #{item}"
-        end
-    end
-
     def push_to_file(username)
-        file_name = "lists/" + username + ".txt"
-        exported_list = File.new(file_name, "w")
-        list.each{|item| exported_list << "#{item}\n"}
+        file_name = "lists/#{username}.txt"
+        File.open(file_name, "w") do |line|
+            line.puts list
+        end
     end
 
     def create_list
         get_the_items
-        puts "Your list has been created:"
-        put_list
-        puts "You can use this list as your checklist every day,"
-        puts "or create a new one whenever you wish.\n"
+        puts "\nYour list has been recorded."
+        puts "\nYou can use this list as your checklist every day,"
+        puts "or create a new one whenever you wish.\n\n"
         puts "To access your list, let's set your username."
         puts "Enter a username:"
         username = gets.chomp
         puts "Username is #{username}.\n\n"
         push_to_file(username)
+        puts "\nYour list has been saved."
         username
     end
 end

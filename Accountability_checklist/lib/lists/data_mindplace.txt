@@ -1,8 +1,8 @@
-01-02-2016
+02/02/2016
+Data date range: 02/01/2016 - 02/02/2016
 
-Data date range: 01/02/2016 - 01-02-2016
+ ~ Accountability standards:
 
-Accountability standards:
 I set a plan for the day which was actionable and didn't overreach.
 I worked on things with long-term benefit.
 I did what I decided to do today.
@@ -14,14 +14,14 @@ I took care of my body.
 I stayed aware and kind to myself.
 
 
-Review of daily checklists by item:
+ ~ Review of daily checklists by item:
 
-xxxx |  100.0% | I worked on things with long-term benefit.
+xxx_ |   75.0% | I worked on things with long-term benefit.
 xx__ |   50.0% | I did what I promised others I would do today.
 xxxx |  100.0% | I worked on code.
-xxxx |  100.0% | I stayed aware and kind to myself.
+xx__ |   50.0% | I stayed aware and kind to myself.
 xxx_ |   75.0% | I set a plan for the day which was actionable and didn't overreach.
-xx__ |   50.0% | I did what I decided to do today.
+xxx_ |   75.0% | I did what I decided to do today.
+xx__ |   50.0% | Total distraction time was under 1 hour.
 xx__ |   50.0% | I took care of my boys.
-xx__ |   50.0% | I took care of my body.
-____ |      0% | Total distraction time was under 1 hour.
+____ |      0% | I took care of my body.

@@ -3,14 +3,11 @@ require_relative 'create_list'
 require_relative 'data_parsing'
 
 def show_data(username)
-    puts "\nWould you like to review your current accountability data?(y/n)"
-    answer = gets.chomp
-    if answer.include?("y")
-        data = DataParsing.new(username)
-        data.parse
-    end
-    puts "\nYour data is in the folder 'lists', titled 'data_#{username}.txt'."
-    puts "Have a great evening :)"
+    data = DataParsing.new(username)
+    data.parse
+    puts "Your data is available in the folder 'lists',"
+    puts "titled 'data_#{username}.txt'."
+    puts "\nHave a great evening :)"
 end
 
 def daily_review
@@ -21,15 +18,18 @@ def daily_review
         list = CreateList.new
         username = list.create_list
         checklist = list.list
-        today = Checklist.new(username, checklist)
+        puts "Now let's do your daily review."
     else
         puts "Username?"
         username = gets.chomp
-        today = Checklist.new(username)
     end
+    today = Checklist.new(username)
     today.daily_review
-    show_data(username)
+    puts "Daily review is complete.\n\n"
+    username
 end
 
-#daily_review
-show_data("mindplace")
+username = daily_review
+puts "Would you like to look at your to-date accountability data?\n\n"
+answer = gets.chomp
+show_data(username) if answer.include?("y")

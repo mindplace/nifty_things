@@ -1,3 +1,12 @@
+# current features:
+#   creates file of parsed data
+#   creates simple chart of success rate for each standard, with percentages
+# 
+# upcoming features:
+#   lists standards that have low success rates - "Things to work on"
+#   success and failure rates over time - "Graphs"
+#   global percentage rate of success and failure - "Global stats"
+
 class DataParsing
     attr_reader :username, :data, :file_name
     
@@ -17,13 +26,18 @@ class DataParsing
         data
     end
     
+    def get_date
+        date = Time.now.to_s.split[0].split("-").reverse
+        date[0], date[1] = date[1], date[0]
+        date.join("/")
+    end
+    
     def create_data_file
-        date = Time.now.to_s.split[0].split("-").reverse.join("-") + "\n\n"
         @file_name = "lists/data_#{username}.txt"
         File.open(file_name, "w") do |f| 
-            f.puts date
+            f.puts get_date
             f.puts "Data date range: #{data.first[0]} - #{data.last[0]}\n\n"
-            f.puts "Accountability standards:"
+            f.puts " ~ Accountability standards:\n\n"
             f.puts File.readlines("lists/#{username}.txt")
             f.puts "\n\n"
         end
@@ -38,7 +52,7 @@ class DataParsing
     end
 
     def daily_checklists_graph
-        graph = [["Review of daily checklists by item:\n\n"]]
+        graph = [[" ~ Review of daily checklists by item:\n\n"]]
         all_met = []
         all_unmet = []
         data.each do |set|
@@ -74,19 +88,15 @@ class DataParsing
         graph
     end
     
+    def display_data
+        puts "\n\n" 
+        puts File.readlines("lists/data_#{username}.txt")
+        puts "\n\n\n"
+    end
+    
     def parse
         create_data_file
         add_to_file(daily_checklists_graph)
-        file_name = "lists/" + username + "_tracker.txt"
-        File.close(file_name)
+        display_data
     end
 end
-
-# current features:
-#   creates file of parsed data
-#   creates simple chart of success rate for each standard, with percentages
-# 
-# upcoming features:
-#   lists standards that have low success rates - "Things to work on"
-#   success and failure rates over time - "Graphs"
-#   global percentage rate of success and failure - "Global stats"

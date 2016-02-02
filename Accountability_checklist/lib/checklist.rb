@@ -15,17 +15,22 @@ class Checklist
         list.nil? ? "No list found" : list
     end
     
+    def get_date
+        date = Time.now.to_s.split[0].split("-").reverse
+        date[0], date[1] = date[1], date[0]
+        date.join("/")
+    end
+    
     def export_to_tracker
         file_name = "lists/" + username + "_tracker.txt"
-        date = Time.now.to_s.split[0].split("-").reverse.join("-")
+        
         File.open(file_name, "a") do |line|
-            line.puts "[#{date.to_sym}, #{standards_met}, #{standards_unmet}]"
+            line.puts "[\"#{get_date}\", #{standards_met}, #{standards_unmet}]"
         end
     end
     
     def daily_review
-        puts "\nFound your list."
-        puts "For every item, write 'y' or 'n'.\n\n"
+        puts "\nFor every item, write 'y' or 'n'.\n\n"
         checklist.each do |item|
             puts "\n" + item
             answer = gets.chomp
