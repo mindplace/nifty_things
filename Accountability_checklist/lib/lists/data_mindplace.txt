@@ -16,12 +16,12 @@ I stayed aware and kind to myself.
 
  ~ Review of daily checklists by item:
 
-xxx_ |   75.0% | I worked on things with long-term benefit.
-xx__ |   50.0% | I did what I promised others I would do today.
-xxxx |  100.0% | I worked on code.
-xx__ |   50.0% | I stayed aware and kind to myself.
-xxx_ |   75.0% | I set a plan for the day which was actionable and didn't overreach.
-xxx_ |   75.0% | I did what I decided to do today.
-xx__ |   50.0% | Total distraction time was under 1 hour.
-xx__ |   50.0% | I took care of my boys.
-____ |      0% | I took care of my body.
+xx_ |   66.67% | I worked on things with long-term benefit.
+xxx |   100.0% | I did what I promised others I would do today.
+xxx |   100.0% | I worked on code.
+xxx |   100.0% | I stayed aware and kind to myself.
+x__ |   33.33% | I set a plan for the day which was actionable and didn't overreach.
+x__ |   33.33% | I did what I decided to do today.
+xx_ |   66.67% | Total distraction time was under 1 hour.
+xx_ |   66.67% | I took care of my boys.
+x__ |   33.33% | I took care of my body.

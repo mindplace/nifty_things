@@ -9,11 +9,14 @@
 
 class DataParsing
     attr_reader :username, :data, :file_name
+    attr_accessor :all_met, :all_unmet
     
     def initialize(username)
         @username = username
         @data = get_file
         @file_name = ""
+        @all_met = []
+        @all_unmet = []
     end
     
     def get_file
@@ -24,6 +27,21 @@ class DataParsing
             data << eval(line)
         end
         data
+    end
+    
+    def count_up_all_met_and_unmet
+        data.each do |set|
+            @all_met << set[1] unless set[1].empty?
+            @all_unmet << set[2] unless set[2].empty?
+        end
+        
+        met_hash = Hash.new(0)
+        @all_met.flatten.each{|key| met_hash[key] += 1}
+        @all_met = met_hash
+        
+        unmet_hash = Hash.new(0)
+        @all_unmet.flatten.each{|key| unmet_hash[key] += 1}
+        @all_unmet = unmet_hash
     end
     
     def get_date
@@ -52,22 +70,16 @@ class DataParsing
     end
 
     def daily_checklists_graph
+        p all_met
+        p all_unmet
         graph = [[" ~ Review of daily checklists by item:\n\n"]]
-        all_met = []
-        all_unmet = []
-        data.each do |set|
-            all_met << set[1] unless set[1].empty?
-            all_unmet << set[2] unless set[2].empty?
-        end
-        all_met = all_met.flatten.group_by(&:itself)
-        all_unmet = all_unmet.flatten.group_by(&:itself)
+        
         width = 17
         all_met.each do |key, value|
-            key_met = value.length
-            key_unmet = all_unmet[key].nil? ? 0 : all_unmet[key].length
-            met_string = "x" * key_met
+            key_unmet = all_unmet[key].nil? ? 0 : all_unmet[key]
+            met_string = "x" * value
             unmet_string = "_" * key_unmet
-            percent = ((key_met.to_f / (key_met + key_unmet).to_f) * 100).round(2).to_s + "% | "
+            percent = ((value.to_f / (value + key_unmet).to_f) * 100).round(2).to_s + "% | "
             dataline = [(met_string + unmet_string) + " | ", percent, key]
             length = dataline[0..1].join.length
             spaces = " " * (width - length)
@@ -77,8 +89,7 @@ class DataParsing
 
         all_unmet.each do |key, value|
             next if all_met.keys.include?(key)
-            key_unmet = value.length
-            unmet_string = ("_" * key_unmet) + " | "
+            unmet_string = ("_" * value) + " | "
             dataline = [unmet_string, "0% | ", key]
             length = dataline[0..1].join.length
             spaces = " " * (width - length)
@@ -95,6 +106,7 @@ class DataParsing
     end
     
     def parse
+        count_up_all_met_and_unmet
         create_data_file
         add_to_file(daily_checklists_graph)
         display_data
