@@ -1,11 +1,11 @@
 # current features:
 #   creates file of parsed data
 #   creates simple chart of success rate for each standard, with percentages
-# 
+#   global and average daily percentage rate of success
+
 # upcoming features:
 #   lists standards that have low success rates - "Things to work on"
 #   success and failure rates over time - "Graphs"
-#   global percentage rate of success and failure - "Global stats"
 
 class DataParsing
     attr_reader :username, :data, :file_name
