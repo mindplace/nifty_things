@@ -70,8 +70,6 @@ class DataParsing
     end
 
     def daily_checklists_graph
-        p all_met
-        p all_unmet
         graph = [[" ~ Review of daily checklists by item:\n\n"]]
         
         width = 17
@@ -99,16 +97,40 @@ class DataParsing
         graph
     end
     
-    def display_data
-        puts "\n\n" 
-        puts File.readlines("lists/data_#{username}.txt")
-        puts "\n\n\n"
+    def global_rate
+       success = all_met.values.inject(:+)
+       failure = all_unmet.values.inject(:+)
+       rate = ((success.to_f / (failure.to_f + success.to_f)) * 100).round(2)
+       "Overall success rate: #{rate}%"
+    end
+    
+    def daily_rate
+        dailies = []
+        data.each do |set|
+            success = set[1].length
+            failure = set[2].length
+            dailies << ((success.to_f / (failure.to_f + success.to_f)) * 100).round(2)
+        end
+        rate = (dailies.inject(:+) / dailies.length).round(2)
+        "Average daily success rate: #{rate}%"
+    end
+            
+    
+    def global_and_daily_overall_rates
+        [["\n\n ~ Averaged success rates:\n\n"], [global_rate], [daily_rate]]
     end
     
     def parse
         count_up_all_met_and_unmet
         create_data_file
         add_to_file(daily_checklists_graph)
+        add_to_file(global_and_daily_overall_rates)
         display_data
+    end
+    
+    def display_data
+        puts "\n\n" 
+        puts File.readlines("lists/data_#{username}.txt")
+        puts "\n\n\n"
     end
 end

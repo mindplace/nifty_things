@@ -25,3 +25,9 @@ x__ |   33.33% | I did what I decided to do today.
 xx_ |   66.67% | Total distraction time was under 1 hour.
 xx_ |   66.67% | I took care of my boys.
 x__ |   33.33% | I took care of my body.
+
+
+ ~ Averaged success rates:
+
+Overall success rate: 66.67%
+Average daily success rate: 66.67%

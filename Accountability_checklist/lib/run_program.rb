@@ -29,7 +29,7 @@ def daily_review
     username
 end
 
-username = daily_review
+#username = daily_review
 puts "Would you like to look at your to-date accountability data?\n\n"
 answer = gets.chomp
-show_data(username) if answer.include?("y")
+show_data("mindplace") if answer.include?("y")
