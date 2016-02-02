@@ -1,3 +1,5 @@
+I write up my updates here: [log](http://mindplace-log.blogspot.com/)
+
 # Accountability checker
 This is a small project based on a larger app idea I would like to build someday. 
 I went looking for a tool that would present me with a preset list of checkpoints
