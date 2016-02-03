@@ -1,4 +1,4 @@
-02/02/2016
+02/03/2016
 Data date range: 02/01/2016 - 02/02/2016
 
  ~ Accountability standards:
@@ -31,3 +31,10 @@ x__ |   33.33% | I took care of my body.
 
 Overall success rate: 66.67%
 Average daily success rate: 66.67%
+
+
+ ~ Standards with success rate below 40%:
+
+I set a plan for the day which was actionable and didn't overreach.
+I did what I decided to do today.
+I took care of my body.

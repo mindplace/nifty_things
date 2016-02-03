@@ -9,7 +9,7 @@
 
 class DataParsing
     attr_reader :username, :data, :file_name
-    attr_accessor :all_met, :all_unmet
+    attr_accessor :all_met, :all_unmet, :low_rate
     
     def initialize(username)
         @username = username
@@ -17,6 +17,7 @@ class DataParsing
         @file_name = ""
         @all_met = []
         @all_unmet = []
+        @low_rate = []
     end
     
     def get_file
@@ -77,7 +78,9 @@ class DataParsing
             key_unmet = all_unmet[key].nil? ? 0 : all_unmet[key]
             met_string = "x" * value
             unmet_string = "_" * key_unmet
-            percent = ((value.to_f / (value + key_unmet).to_f) * 100).round(2).to_s + "% | "
+            percent = ((value.to_f / (value + key_unmet).to_f) * 100).round(2)
+            @low_rate << key if percent < 40
+            percent = percent.to_s + "% | "
             dataline = [(met_string + unmet_string) + " | ", percent, key]
             length = dataline[0..1].join.length
             spaces = " " * (width - length)
@@ -87,6 +90,7 @@ class DataParsing
 
         all_unmet.each do |key, value|
             next if all_met.keys.include?(key)
+            @low_rate << key 
             unmet_string = ("_" * value) + " | "
             dataline = [unmet_string, "0% | ", key]
             length = dataline[0..1].join.length
@@ -120,11 +124,16 @@ class DataParsing
         [["\n\n ~ Averaged success rates:\n\n"], [global_rate], [daily_rate]]
     end
     
+    def low_success_rate_standards
+        [["\n\n ~ Standards with success rate below 40%:\n\n"], low_rate]
+    end
+    
     def parse
         count_up_all_met_and_unmet
         create_data_file
         add_to_file(daily_checklists_graph)
         add_to_file(global_and_daily_overall_rates)
+        add_to_file(low_success_rate_standards)
         display_data
     end
     
