@@ -2,14 +2,12 @@
 #   creates file of parsed data
 #   creates simple chart of success rate for each standard, with percentages
 #   global and average daily percentage rate of success
-
-# upcoming features:
-#   lists standards that have low success rates - "Things to work on"
-#   success and failure rates over time - "Graphs"
+#   lists standards that have low success rates
+#   provides graph of daily success rates over time
 
 class DataParsing
     attr_reader :username, :data, :file_name
-    attr_accessor :all_met, :all_unmet, :low_rate
+    attr_accessor :all_met, :all_unmet, :low_rate, :dailies
     
     def initialize(username)
         @username = username
@@ -18,6 +16,7 @@ class DataParsing
         @all_met = []
         @all_unmet = []
         @low_rate = []
+        @dailies = []
     end
     
     def get_file
@@ -73,7 +72,7 @@ class DataParsing
     def daily_checklists_graph
         graph = [[" ~ Review of daily checklists by item:\n\n"]]
         
-        width = 17
+        width = all_met.values.max * 3
         all_met.each do |key, value|
             key_unmet = all_unmet[key].nil? ? 0 : all_unmet[key]
             met_string = "x" * value
@@ -98,6 +97,7 @@ class DataParsing
             dataline[0..1] = dataline[0..1].join(spaces)
             graph << dataline.join
         end
+        @low_rate << "Nothing here. Great work :)" if low_rate.empty?
         graph
     end
     
@@ -105,35 +105,43 @@ class DataParsing
        success = all_met.values.inject(:+)
        failure = all_unmet.values.inject(:+)
        rate = ((success.to_f / (failure.to_f + success.to_f)) * 100).round(2)
-       "Overall success rate: #{rate}%"
+       ["\n\n ~ Average daily success rate: #{rate}%"]
     end
     
-    def daily_rate
-        dailies = []
+    def generate_dailies
         data.each do |set|
             success = set[1].length
             failure = set[2].length
-            dailies << ((success.to_f / (failure.to_f + success.to_f)) * 100).round(2)
+            @dailies << ((success.to_f / (failure.to_f + success.to_f)) * 100).round(2)
         end
-        rate = (dailies.inject(:+) / dailies.length).round(2)
-        "Average daily success rate: #{rate}%"
-    end
-            
-    
-    def global_and_daily_overall_rates
-        [["\n\n ~ Averaged success rates:\n\n"], [global_rate], [daily_rate]]
     end
     
     def low_success_rate_standards
-        [["\n\n ~ Standards with success rate below 40%:\n\n"], low_rate]
+        [["\n\n ~ Standards with success rates below 40%:\n\n"], low_rate]
+    end
+    
+    def dailies_graph_locations
+        dailies_locations = []
+        dailies.each_with_index do |item, i|
+            item = (item.round / 10).round
+            dailies_locations << [(11 - item), i + 1]
+        end
+        dailies_locations
+    end
+    
+    def graphs
+        dailies_graph = Graph.new(dailies_graph_locations, dailies.length)
+        dailies_graph.graph
     end
     
     def parse
         count_up_all_met_and_unmet
+        generate_dailies
         create_data_file
         add_to_file(daily_checklists_graph)
-        add_to_file(global_and_daily_overall_rates)
+        add_to_file(global_rate)
         add_to_file(low_success_rate_standards)
+        add_to_file(graphs)
         display_data
     end
     
@@ -141,5 +149,42 @@ class DataParsing
         puts "\n\n" 
         puts File.readlines("lists/data_#{username}.txt")
         puts "\n\n\n"
+    end
+end
+
+
+class Graph < Array
+    attr_accessor :graph, :locations
+    def initialize(locations, size)
+        @locations = locations
+        @graph = new_graph(size)
+        populate_locations
+    end
+    
+    def new_graph(size)
+        array = Array.new(12) {Array.new(size + 1)}
+        array[-1] = (0..size).to_a.map(&:to_s).join(" ").gsub("0", "   ")
+        array.dup.each_index do |row_index|
+            next if row_index == array.length - 1
+            array[row_index][0] = array.length - (row_index + 2)
+        end
+        array
+    end
+    
+    def populate_locations
+        locations.each do |set|
+            @graph[set[0]][set[1]] = "*"
+        end
+        
+        graph.each_with_index do |row, i|
+            break if i == graph.length - 1
+            row.each_with_index do |pos, j|
+                p graph[i][j]
+                graph[i][j].nil? ? @graph[i][j] = " " : @graph[i][j]
+            end
+            @graph[i] = @graph[i].insert(1, " ").join(" ")
+        end
+        ending = ["\ny-axis: success percentage in tens", "x-axis: days"]
+        @graph = ["\n\n ~ Success rates over time:\n\n"] + graph + ending
     end
 end

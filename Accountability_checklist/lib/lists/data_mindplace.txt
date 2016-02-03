@@ -1,5 +1,5 @@
 02/03/2016
-Data date range: 02/01/2016 - 02/02/2016
+Data date range: 02/01/2016 - 02/03/2016
 
  ~ Accountability standards:
 
@@ -16,25 +16,39 @@ I stayed aware and kind to myself.
 
  ~ Review of daily checklists by item:
 
-xx_ |   66.67% | I worked on things with long-term benefit.
-xxx |   100.0% | I did what I promised others I would do today.
-xxx |   100.0% | I worked on code.
-xxx |   100.0% | I stayed aware and kind to myself.
-x__ |   33.33% | I set a plan for the day which was actionable and didn't overreach.
-x__ |   33.33% | I did what I decided to do today.
-xx_ |   66.67% | Total distraction time was under 1 hour.
-xx_ |   66.67% | I took care of my boys.
-x__ |   33.33% | I took care of my body.
+xxxxx___ |      62.5% | I worked on things with long-term benefit.
+xxxxxx__ |      75.0% | I did what I promised others I would do today.
+xxxxxxxx |     100.0% | I worked on code.
+xxxxxxxx |     100.0% | I stayed aware and kind to myself.
+xxxxxx__ |      75.0% | I set a plan for the day which was actionable and didn't overreach.
+xxxx____ |      50.0% | I did what I decided to do today.
+xxxx____ |      50.0% | Total distraction time was under 1 hour.
+xxxx____ |      50.0% | I took care of my boys.
+xxxxxx__ |      75.0% | I took care of my body.
 
 
- ~ Averaged success rates:
-
-Overall success rate: 66.67%
-Average daily success rate: 66.67%
+ ~ Average daily success rate: 70.83%
 
 
- ~ Standards with success rate below 40%:
+ ~ Standards with success rates below 40%:
 
-I set a plan for the day which was actionable and didn't overreach.
-I did what I decided to do today.
-I took care of my body.
+Nothing here. Great work :)
+
+
+ ~ Success rates over time:
+
+10                  
+9     *   *        
+8                  
+7                  
+6               *  
+5             *   *
+4       *   *      
+3   *              
+2                  
+1                  
+0                  
+    1 2 3 4 5 6 7 8
+
+y-axis: success percentage in tens
+x-axis: days
