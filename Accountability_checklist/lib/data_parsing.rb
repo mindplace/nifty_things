@@ -1,7 +1,7 @@
 # current features:
 #   creates file of parsed data
 #   creates simple chart of success rate for each standard, with percentages
-#   global and average daily percentage rate of success
+#   average daily percentage rate of success
 #   lists standards that have low success rates
 #   provides graph of daily success rates over time
 
@@ -129,7 +129,7 @@ class DataParsing
         dailies_locations
     end
     
-    def graphs
+    def graphed_success_over_time
         dailies_graph = Graph.new(dailies_graph_locations, dailies.length)
         dailies_graph.graph
     end
@@ -141,7 +141,7 @@ class DataParsing
         add_to_file(daily_checklists_graph)
         add_to_file(global_rate)
         add_to_file(low_success_rate_standards)
-        add_to_file(graphs)
+        add_to_file(graphed_success_over_time)
         display_data
     end
     
@@ -151,7 +151,6 @@ class DataParsing
         puts "\n\n\n"
     end
 end
-
 
 class Graph < Array
     attr_accessor :graph, :locations
