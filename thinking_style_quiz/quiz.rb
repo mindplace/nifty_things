@@ -42,10 +42,6 @@ class Quiz
        @results[locate_set(item)] += 1
     end
     
-    def update_export(set, choices)
-        
-    end
-    
     def print_current_set(set, num)
         to_export = [[set.map{|x| "#{x} => #{locate_set(x)}"}]]
         set = set.shuffle
@@ -60,7 +56,28 @@ class Quiz
             letter = c if letter == "c"
             letter = d if letter == "d"                 
             update_results(letter)
-            answer_array << 
+            answer_array << letter
+        end
+        to_export << answer_array
+        @export << to_export
+    end
+    
+    def send_export
+        types = ["Concrete Sequential", "Abstract Sequential", "Abstract Random", "Concrete Random"]
+        File.open("quiz_results/#{Time.now.to_s.split[0..1].join("_")}.txt", "w") do |line|
+            line.puts Time.now.to_s.split[0..1].join("_") + "\n\n"
+            line.puts "Personal Thinking Style - Quiz results\n\n"
+            line.puts "Results:\n\n"
+            results.values.each_index do |i|
+                item = results.values[i]
+                line.puts "#{types[i]}: #{item}"
+            end
+            line.puts "\n\nWord sets and answers:\n\n"
+            export.each do |set|
+                set[0] = "[#{set[0].join(", ")}] "
+                set[1] = set[1].join(", ")
+                line.puts set[0] + set[1]
+            end
         end
     end
     
@@ -77,6 +94,8 @@ class Quiz
             item = results.values[i]
             puts "#{types[i]}: #{item}"
         end
+        send_export
+        puts "\n\nYour results are saved in quiz_results folder under the current timestamp."
     end
 end 
 
