@@ -39,6 +39,6 @@ more effective.
 
 # More resources
 [FloatingNeutrinos.net](http://www.floatingneutrinos.com/Message/arcs/links_on_abstractrandom.htm): learning 
-preferences, characteristics, and typical struggles for each thiking style.
+preferences, characteristics, and typical struggles for each thinking style.
 
 
