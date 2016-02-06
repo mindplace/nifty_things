@@ -65,18 +65,20 @@ class Quiz
     def send_export
         types = ["Concrete Sequential", "Abstract Sequential", "Abstract Random", "Concrete Random"]
         File.open("quiz_results/#{Time.now.to_s.split[0..1].join("_")}.txt", "w") do |line|
-            line.puts Time.now.to_s.split[0..1].join("_") + "\n\n"
+            line.puts Time.now.to_s.split[0..1].join(", ") + "\n\n"
             line.puts "Personal Thinking Style - Quiz results\n\n"
-            line.puts "Results:\n\n"
+            line.puts "   Results:\n\n"
             results.values.each_index do |i|
                 item = results.values[i]
                 line.puts "#{types[i]}: #{item}"
             end
-            line.puts "\n\nWord sets and answers:\n\n"
-            export.each do |set|
+            line.puts "\n\n   Word sets and answers:\n\n"
+            export.each_index do |i|
+                set = export[i]
                 set[0] = "[#{set[0].join(", ")}] "
                 set[1] = set[1].join(", ")
-                line.puts set[0] + set[1]
+                line.puts "Set #{i + 1}: #{set[0]}"
+                line.puts "     Your choices: #{set[1]}\n\n"
             end
         end
     end
