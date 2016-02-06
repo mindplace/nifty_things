@@ -48,6 +48,7 @@ class Quiz
         a = set[0]; b = set[1]; c = set[2]; d = set[3]
         puts "\nSet #{num + 1}:"
         puts "a. #{a}, b. #{b}, c. #{c}, d. #{d}"
+        print "Choices:  "
         answer = gets.chomp.split(",").map(&:strip)
         answer_array = []
         answer.each do |letter|
@@ -85,8 +86,7 @@ class Quiz
     
     def serve_quiz
         puts "For each set of words, choose the 2 that best describe you."
-        puts "For example, given a. thoughtful, b. spontaneous, c. considerate, if you choose"
-        puts "thoughtful and spontaneous, write a,b."
+        puts "Enter 2 choices per set, like so: a,c"
         (0..14).each do |num|
             print_current_set(sets[num], num)
         end

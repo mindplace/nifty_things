@@ -1,8 +1,8 @@
-2016-02-06, 07:34:25
+2016-02-06, 23:16:44
 
 Personal Thinking Style - Quiz results
 
-Results:
+   Results:
 
 Concrete Sequential: 1
 Abstract Sequential: 1
@@ -10,10 +10,10 @@ Abstract Random: 0
 Concrete Random: 0
 
 
-Word sets and answers:
+   Word sets and answers:
 
 Set 1: [Realistic => CS, Analytical => AS, Imaginative => AR, Investigative => CR] 
-     Your choices: Realistic, Analytical
+     Your choices: Analytical, Realistic
 
 Set 2: [Organized => CS, Critical => AS, Adaptable => AR, Inquisitive => CR] 
      Your choices: 

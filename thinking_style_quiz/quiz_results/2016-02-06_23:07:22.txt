@@ -1,59 +1,59 @@
-2016-02-06, 07:35:38
+2016-02-06, 23:07:22
 
 Personal Thinking Style - Quiz results
 
    Results:
 
-Concrete Sequential: 1
-Abstract Sequential: 1
-Abstract Random: 0
-Concrete Random: 2
+Concrete Sequential: 6
+Abstract Sequential: 11
+Abstract Random: 8
+Concrete Random: 5
 
 
    Word sets and answers:
 
 Set 1: [Realistic => CS, Analytical => AS, Imaginative => AR, Investigative => CR] 
-     Your choices: Analytical, Investigative
+     Your choices: Investigative, Imaginative
 
 Set 2: [Organized => CS, Critical => AS, Adaptable => AR, Inquisitive => CR] 
-     Your choices: Organized, Inquisitive
+     Your choices: Critical, Organized
 
 Set 3: [Getting to the point => CS, Debating => AS, Relating => AR, Creating => CR] 
-     Your choices: 
+     Your choices: Creating, Debating
 
 Set 4: [Practical => CS, Academic => AS, Personal => AR, Adventurous => CR] 
-     Your choices: 
+     Your choices: Academic, Personal
 
 Set 5: [Precise => CS, Systematic => AS, Flexible => AR, Inventive => CR] 
-     Your choices: 
+     Your choices: Inventive, Precise
 
 Set 6: [Orderly => CS, Sensible => AS, Sharing => AR, Independent => CR] 
-     Your choices: 
+     Your choices: Orderly, Sharing
 
 Set 7: [Perfectionist => CS, Logical => AS, Cooperative => AR, Competitive => CR] 
-     Your choices: 
+     Your choices: Competitive, Logical
 
 Set 8: [Hardworking => CS, Intellectual => AS, Sensitive => AR, Risk-taking => CR] 
-     Your choices: 
+     Your choices: Sensitive, Intellectual
 
 Set 9: [Planner => CS, Reader => AS, People person => AR, Problem solver => CR] 
-     Your choices: 
+     Your choices: Reader, Planner
 
 Set 10: [Memorize => CS, Think-through => AS, Associate => AR, Originate => CR] 
-     Your choices: 
+     Your choices: Associate, Think-through
 
 Set 11: [Wants direction => CS, Judger => AS, Spontaneous => AR, Changer => CR] 
-     Your choices: 
+     Your choices: Wants direction, Judger
 
 Set 12: [Cautious => CS, Reasoning => AS, Communicating => AR, Discovering => CR] 
-     Your choices: 
+     Your choices: Reasoning, Discovering
 
 Set 13: [Practicing => CS, Examining => AS, Caring => AR, Challenging => CR] 
-     Your choices: 
+     Your choices: Caring, Examining
 
 Set 14: [Completing work => CS, Gaining ideas => AS, Interpreting => AR, Seeing possibilities => CR] 
-     Your choices: 
+     Your choices: Interpreting, Completing work
 
 Set 15: [Doing => CS, Thinking => AS, Feeling => AR, Experimenting => CR] 
-     Your choices: 
+     Your choices: Thinking, Feeling
 
