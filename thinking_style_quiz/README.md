@@ -3,8 +3,8 @@ Based on various qualitative research, certain thinkers have proposed the concep
 style"--a description that seeks to concretize the preference individuals have in parsing data.
 
 # Using the quiz 
-Download the [lib/quiz.rb](link) file. Create a folder in the same location as the quiz.rb file and name the folder 'quiz_results'.
-Run quiz.rb from your terminal/shell; your results will be available in the quiz_results folder.
+Download the [quiz.rb](https://github.com/mindplace/nifty_things/blob/master/thinking_style_quiz/quiz.rb) 
+and run the script from your terminal/shell.
 
 # Background information
 *This part of the page has been copied from [TheLearningWeb.net](http://www.thelearningweb.net/personalthink.html).*
@@ -35,3 +35,9 @@ which thinking style works best for you. Once you know your own style you can th
 analyze the others. This will help you understand other people better. It will make 
 you more flexible. And perhaps we can all pick up tips from each other on how to be 
 more effective.
+
+# More resources
+[FloatingNeutrinos.net](http://www.floatingneutrinos.com/Message/arcs/links_on_abstractrandom.htm): learning 
+preferences, characteristics, and typical struggles for each mind type
+
+
