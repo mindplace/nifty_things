@@ -18,7 +18,7 @@ instruction at the University of Connecticut, has divided these into four groups
 - <b>Concrete Sequential</b>: these thinkers tend to be based in reality. They process information in an ordered, sequential, linear way.
 - <b>Concrete Random</b>: these thinkers are experimenters.
 - <b>Abstract Random</b>: these thinkers organize information through reflection, and thrive in unstructured, people-oriented environments.
-- <b>Abstract Sequential<b/>: these thinkers love the world of theory and abstract thought.
+- <b>Abstract Sequential</b>: these thinkers love the world of theory and abstract thought.
 
 We stress that no thinking style is superior; they are simply different. Each style 
 can be effective in its own way. The important thing is that you become more aware of 
