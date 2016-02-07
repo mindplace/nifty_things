@@ -8,7 +8,7 @@ and run the script from your terminal/shell. To be able to view saved results, c
 folder in the same location you save quiz.rb. 
 
 # Background information
-*This part of the page has been copied from [TheLearningWeb.net](http://www.thelearningweb.net/personalthink.html).*
+*This part of the page has been copied from [TheLearningWeb](http://www.thelearningweb.net/personalthink.html).*
 *It describes the way the quiz program serves and scores answers.*
 
 Not only do we have our preferred learning and working styles, we also have our 
@@ -31,4 +31,5 @@ more effective.
 [FloatingNeutrinos.net](http://www.floatingneutrinos.com/Message/arcs/links_on_abstractrandom.htm): learning 
 preferences, characteristics, and typical struggles for each thinking style.
 
-
+["Learning Styles"](http://sourcesofinsight.com/concrete-abstract-random-and-sequential/): a
+less academic look at the 4 thinking styles.
