@@ -1,0 +1,60 @@
+2016-02-06, 23:28:38
+
+Personal Thinking Style - Quiz results
+Name: Thomas, by Esther
+
+   Results:
+
+Concrete Sequential: 11
+Abstract Sequential: 8
+Abstract Random: 3
+Concrete Random: 3
+
+
+   Word sets and answers:
+
+Set 1: [Realistic => CS, Analytical => AS, Imaginative => AR, Investigative => CR] 
+     Your choices: Investigative, Realistic
+
+Set 2: [Organized => CS, Critical => AS, Adaptable => AR, Inquisitive => CR] 
+     Your choices: Adaptable, Critical
+
+Set 3: [Getting to the point => CS, Debating => AS, Relating => AR, Creating => CR] 
+     Your choices: Debating, Getting to the point
+
+Set 4: [Practical => CS, Academic => AS, Personal => AR, Adventurous => CR] 
+     Your choices: Practical
+
+Set 5: [Precise => CS, Systematic => AS, Flexible => AR, Inventive => CR] 
+     Your choices: Systematic, Flexible
+
+Set 6: [Orderly => CS, Sensible => AS, Sharing => AR, Independent => CR] 
+     Your choices: Independent, Orderly
+
+Set 7: [Perfectionist => CS, Logical => AS, Cooperative => AR, Competitive => CR] 
+     Your choices: Logical, Cooperative
+
+Set 8: [Hardworking => CS, Intellectual => AS, Sensitive => AR, Risk-taking => CR] 
+     Your choices: Hardworking
+
+Set 9: [Planner => CS, Reader => AS, People person => AR, Problem solver => CR] 
+     Your choices: Problem solver
+
+Set 10: [Memorize => CS, Think-through => AS, Associate => AR, Originate => CR] 
+     Your choices: Memorize, Think-through
+
+Set 11: [Wants direction => CS, Judger => AS, Spontaneous => AR, Changer => CR] 
+     Your choices: Wants direction, Judger
+
+Set 12: [Cautious => CS, Reasoning => AS, Communicating => AR, Discovering => CR] 
+     Your choices: Reasoning, Cautious
+
+Set 13: [Practicing => CS, Examining => AS, Caring => AR, Challenging => CR] 
+     Your choices: Examining, Practicing
+
+Set 14: [Completing work => CS, Gaining ideas => AS, Interpreting => AR, Seeing possibilities => CR] 
+     Your choices: Completing work
+
+Set 15: [Doing => CS, Thinking => AS, Feeling => AR, Experimenting => CR] 
+     Your choices: Doing
+
