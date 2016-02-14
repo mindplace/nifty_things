@@ -31,12 +31,27 @@ class MicroBlogger
   end
 
   def route_dm
+    puts "\nFriends: #{friends.join(", ")}"
     print "\nSend message to:   "
     target = gets.chomp
-    sending_to_target = MicroBlogger.new
-    sending_to_target.send_dm(target)
+    if friends.include?(target)
+      sending_to_target = MicroBlogger.new
+      sending_to_target.send_dm(target)
+    else puts "Sorry, can't DM someone who isn't your friend!"
+    end
   end
 
+  def friends
+    client.followers.map{|person| client.user(person).screen_name}
+  end
+
+  def get_all_latest_friends_tweets
+    client.followers.each do |friend|
+      puts
+      puts client.user(friend).screen_name
+      puts client.user(friend).status.text
+    end
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -45,9 +60,11 @@ if __FILE__ == $PROGRAM_NAME
   puts "Available commands:"
   puts "   q => quit"
   puts "   dm => direct message "
-  puts "   t => tweet\n\n"
+  puts "   t => tweet"
+  puts "   g => see all the latest tweets from friends\n\n"
   command = ""
-  commands = {"dm" => "route_dm", "t"=>"tweet", "q"=>"quit"}
+  commands = {"dm" => "route_dm", "t"=>"tweet", "q"=>"quit",
+              "g" => "get_all_latest_friends_tweets"}
   while command != "quit"
     print "Enter command:  "
     command = commands[gets.chomp]
@@ -56,8 +73,7 @@ if __FILE__ == $PROGRAM_NAME
       puts
     elsif command == "quit"
       break
-    else
-      puts "Sorry, that command is not set!"
+    else puts "Sorry, that command is not set!"
     end
   end
   puts "\nThanks for using the JSL Twitter client!\n\n"
