@@ -19,9 +19,24 @@ class MicroBlogger
     end
   end
 
-  def direct_message
-    puts "stuff"
+  def send_dm(username)
+    print "\nMessage:   "
+    message = "d #{username} #{gets.chomp}"
+
+    if message.length < 140
+      @client.update(message)
+      puts "Message sent!"
+    else raise "Message too long to send"
+    end
   end
+
+  def route_dm
+    print "\nSend message to:   "
+    target = gets.chomp
+    sending_to_target = MicroBlogger.new
+    sending_to_target.send_dm(target)
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -32,7 +47,7 @@ if __FILE__ == $PROGRAM_NAME
   puts "   dm => direct message "
   puts "   t => tweet\n\n"
   command = ""
-  commands = {"dm" => "direct_message", "t"=>"tweet", "q"=>"quit"}
+  commands = {"dm" => "route_dm", "t"=>"tweet", "q"=>"quit"}
   while command != "quit"
     print "Enter command:  "
     command = commands[gets.chomp]
