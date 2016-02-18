@@ -1,4 +1,5 @@
 require 'jumpstart_auth'
+require 'bitly'
 
 class MicroBlogger
   attr_reader :client
@@ -7,15 +8,44 @@ class MicroBlogger
     @client = JumpstartAuth.twitter
   end
 
+  def shorten_url(message)
+    puts "Shortening links..."
+    
+    urls = Hash.new(0)
+    url = message.split.select{|item| item.include?("http") || item.include?("www")}
+    text = message.split.select{|item| !url.include?(item)}.join(" ")
+    
+    url.each do |item|
+      url_index = message.split.index(item)
+      item = "https://" + item unless item.include?("https://")
+      Bitly.use_api_version_3
+      bitly = Bitly.new("o_32nseoo04a", "R_e2413eceb5864896acc36846a63b4aa9")
+      item = bitly.shorten(item).short_url
+      urls[item] = url_index
+    end
+    
+    new_message = text
+    urls.each do |item, i|
+      new_message = new_message.split.insert(i, item).join(" ")
+    end
+    
+    puts "New tweet: #{new_message}"
+    new_message
+  end
+  
   def tweet
     puts "\nWhat would you like to tweet?"
     print ">  "
     message = gets.chomp
+    
+    if message.include?("http") || message.include?("www")
+      message = shorten_url(message)
+    end
 
     if message.length < 140
       @client.update(message)
       puts "Tweet posted!"
-    else raise "Tweet too long to post"
+    else puts "Tweet too long to post"
     end
   end
 
@@ -26,7 +56,7 @@ class MicroBlogger
     if message.length < 140
       @client.update(message)
       puts "Message sent!"
-    else raise "Message too long to send"
+    else puts "Message too long to send"
     end
   end
 
