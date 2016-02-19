@@ -12,3 +12,4 @@ Explanation in its Readme.
 stage of completion.
 - <b>MicroBlogger</b>: a Twitter client that can post tweets, send direct messages,
 and more, all from the command line.
+- <b>Renaissance MadLibber: a fun little Renaissance adventure game for those who are happily insulted :D 
