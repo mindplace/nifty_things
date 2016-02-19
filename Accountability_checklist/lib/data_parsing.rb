@@ -72,7 +72,7 @@ class DataParsing
     def daily_checklists_graph
         graph = [[" ~ Review of daily checklists by item:\n\n"]]
         
-        width = all_met.values.max * 3
+        width = all_met.values.max * 15
         all_met.each do |key, value|
             key_unmet = all_unmet[key].nil? ? 0 : all_unmet[key]
             met_string = "x" * value
