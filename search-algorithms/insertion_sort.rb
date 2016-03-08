@@ -9,8 +9,13 @@ def insertion_sort(array)
             
             if a < b 
                 sorted = false
-                location = array.index(array[0..i].find{|x| a < x}) 
-                location = 0 if location.nil?
+                
+                location = 0
+                array[0..i].each_index do |j|
+                    location = j if a < array[j]
+                    break
+                end
+
                 array = array - [a]
                 array.insert(location, a)
                 break
