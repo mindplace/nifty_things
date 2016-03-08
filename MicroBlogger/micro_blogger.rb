@@ -1,5 +1,6 @@
 require 'jumpstart_auth'
 require 'bitly'
+require 'klout'
 
 class MicroBlogger
   attr_reader :client
@@ -80,8 +81,16 @@ class MicroBlogger
       puts
       puts client.user(friend).screen_name
       puts client.user(friend).status.text
+      puts friend_klout_score(client.user(friend).screen_name).round(2)
     end
   end
+  
+  def friend_klout_score(screenname)
+     Klout.api_key = 'xu9ztgnacmjx3bu82warbr3h'
+     identity = Klout::Identity.find_by_screen_name(screenname)
+     user = Klout::User.new(identity.id)
+     user.score.score
+   end
 end
 
 if __FILE__ == $PROGRAM_NAME
