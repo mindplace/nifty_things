@@ -109,5 +109,3 @@ if __FILE__ == $PROGRAM_NAME
     quiz = Quiz.new
     quiz.serve_quiz
 end
-
-#new comment on branch
