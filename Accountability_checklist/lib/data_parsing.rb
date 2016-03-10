@@ -72,7 +72,7 @@ class DataParsing
     def daily_checklists_graph
         graph = [[" ~ Review of daily checklists by item:\n\n"]]
         
-        width = all_met.values.max * 15
+        width = all_met.values.max * 3
         all_met.each do |key, value|
             key_unmet = all_unmet[key].nil? ? 0 : all_unmet[key]
             met_string = "x" * value
@@ -93,7 +93,7 @@ class DataParsing
             unmet_string = ("_" * value) + " | "
             dataline = [unmet_string, "0% | ", key]
             length = dataline[0..1].join.length
-            spaces = " " * (width - length)
+            spaces = " " + (width - length)
             dataline[0..1] = dataline[0..1].join(spaces)
             graph << dataline.join
         end
@@ -178,7 +178,6 @@ class Graph < Array
         graph.each_with_index do |row, i|
             break if i == graph.length - 1
             row.each_with_index do |pos, j|
-                p graph[i][j]
                 graph[i][j].nil? ? @graph[i][j] = " " : @graph[i][j]
             end
             @graph[i] = @graph[i].insert(1, " ").join(" ")

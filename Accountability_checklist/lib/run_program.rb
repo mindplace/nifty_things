@@ -33,7 +33,8 @@ def send_tweet
     todays_tweet = MicroBlogger.new
     todays_tweet.tweet 
 end
-    
+
+
 username = "mindplace"
 puts "Would you like to look at your to-date accountability data?\n\n"
 answer = gets.chomp
@@ -42,3 +43,5 @@ show_data(username) if answer.include?("y")
 puts "\n\nWould you like to tweet about your successes?"
 answer = gets.chomp
 send_tweet if answer.include?("y")
+
+puts "\nThanks for using your Accountability Checklist :)"
