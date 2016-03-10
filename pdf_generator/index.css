@@ -1,0 +1,100 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1450992000852-086b70712859?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d938ced2caafe4161eb595403dfee831");
+  background-position: bottom center;
+  background-size: cover !important;
+  background-attachment: fixed;
+  padding: 5%;
+  margin: auto;
+  max-width: 800px;
+  height: 400px;
+}
+
+.navbar {
+  overflow: hidden;
+  margin: 5px 0 10px 0;
+  max-width: 100%;
+  text-align: left;
+}
+
+.navbar-li {
+  float: left;
+  display: block;
+  background-color: white;
+  text-align: center;
+  padding: 8px 23px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 3.2%;
+  font-size: 18px;
+}
+
+.navbar-li-last {
+  float: left;
+  display: block;
+  background-color: white;
+  text-align: center;
+  padding: 8px 23px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 0;
+  font-size: 18px;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: orange;
+  font-weight: normal;
+}
+
+a:hover {
+  text-decoration: none;
+  color: red;
+  font-weight: normal;
+}
+
+.headings {
+  padding: 2px 0 2px 0;
+  margin: 2px 0 2px 0;
+}
+
+.section {
+  font-size: 16px;
+  font-family: "Source Sans Pro";
+  padding: 4%;
+  background-color: white;
+  overflow: hidden;
+}
+
+.social-links {
+  display: block;
+  float: left;
+}
+
+.link-li {
+  float: right;
+  display: block;
+  padding: 0 10px;
+}
+
+.image-right {
+  float: left;
+  position: static;
+  margin: 0px 20px 0 0 ;
+}
+
+.float-right {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  background-color: orange;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 1px 4px 1px 4px;
+}
+
+
+
+
