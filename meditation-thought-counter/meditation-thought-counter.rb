@@ -1,4 +1,3 @@
-
 class ThoughtCounter
     attr_reader :thoughts
     
@@ -24,6 +23,17 @@ class ThoughtCounter
     end
     
     def print_data
+        total_thoughts = thoughts.keys.length
+        puts "Total thoughts over this session: #{total_thoughts}"
+        
+        inbetween = thoughts.keys
+        inbetween = translate_time(inbetween.inject(:+) / total_thoughts)
+        puts "Average time between thoughts:  #{inbetween}"
+        
+        best_time = thoughts[thoughts.keys.max]
+        puts "Longest interval between thoughts: #{best_time}"
+        
+        puts 
         p thoughts
     end
     
@@ -50,7 +60,7 @@ class ThoughtCounter
             record_thought(interval)
         end
         total_time = translate_time(((Time.now - start_time).round))
-        puts "Total session length was #{total_time} long."
+        puts "\nTotal session length was #{total_time} long."
         
         print_data
     end
