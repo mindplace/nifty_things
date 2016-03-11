@@ -1,8 +1,7 @@
 require "pdfkit"
 
 def generate_pdf
-    page = PDFKit.new(File.open("page.html"), :page_size => 'Letter')
-    p page
+    page = PDFKit.new("https://google.com", :page_size => 'Letter')
     page.to_file("page.pdf")
 end
 
