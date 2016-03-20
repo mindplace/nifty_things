@@ -6,7 +6,7 @@ update your progress every day to see
 whether you stay accountable to the standards you've set for yourself.
 - **Deadline Counter**: counter that counts down the days until a given deadline,
 and alternatively can give you an exact deadline and let you know how many hours,
-days, etc are left. 
+days, etc are left.
 - <b>HTML Projects</b>: a folder for my various html projects, none in any
 stage of completion.
 - **Meditation Thought Counter**: small Ruby script that allows a user to record the
@@ -17,7 +17,7 @@ and more, all from the command line.
 - **Calculator (with module mixin)**: small calculator script trying out module mixins.
 - **PDF Generation**: a small script, trying out some gems, to generate PDFs using
 HTML & CSS files or a URL.
-- <b>Renaissance MadLibber: a fun little Renaissance adventure game for those who are happily insulted :D
+- **Renaissance MadLibber**: a fun little Renaissance adventure game for those who are happily insulted :D
 - **Sorting Algorithms**: writing my own sorting algorithms in Ruby.
 - **Tea/Coffee Site**: small CSS/HTML project that will at some point also have
 JavaScript.
