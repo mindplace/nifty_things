@@ -31,26 +31,20 @@ end
 
 class Calculator
   extend ExtraArrayMethods
-
-  def Calculator.add(*nums)
-    nums.inject(:+)
-  end
-
-  def Calculator.subtract(*nums)
-    nums.inject(:-)
-  end
-
-  def Calculator.multiply(*nums)
-    nums.inject(:*)
-  end
-
-  def Calculator.divide(*nums)
-    nums.inject(:/)
+  
+  def self.method_missing(method, *nums)
+    operators = {add: :+, subtract: :-, multiply: :*, divide: :/}
+    if operators.keys.include?(method) 
+      nums.inject(operators[method])
+    else
+      "Sorry, '#{method.to_s}' method not available!"
+    end
   end
 end
 
 p Calculator.add(6, 5, 9) # => 20
 p Calculator.multiply(2, 4) # => 8
+p Calculator.tester(2, 3, 4) # => "Sorry, 'tester' method not avilable!"
 p Calculator.median(1, 2, 3, 4) # => 2.5
 p Calculator.median(1, 2, 3, 4, 5) # => 3
 p Calculator.mode(2, 2, 2, 6, 5, 8, 8, 8, 8, 5) # => 8
