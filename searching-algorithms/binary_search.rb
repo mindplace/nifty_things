@@ -2,33 +2,33 @@ def binary_search(array, item)
   index = nil
   found = false
 
-  slice = array
-  mid_point = (slice.length - 1) / 2
+  mid_point = array.length / 2
   before = 0
   after = 0
 
   while found == false
-    if slice[mid_point] > item
-      p slice
-      after += slice[mid_point..-1].length
-      mid_point -= after
-      slice = slice[0..mid_point]
-    elsif slice[mid_point] < item
-      p slice
-      before += slice[0..mid_point].length
-      mid_point -= before
-      slice = slice[mid_point..-1]
-    elsif slice.length < 2 || slice[mid_point] == item
-      if slice[0] == item
-        index = before + 1
-        found = true
-      elsif slice[mid_point] == item
-        index = mid_point
-        found = true
+    if array.length < 2 || array[mid_point] == item
+      found = true
+      if array.length < 2
+        index = before + 1 if array[0] == item
+        index = -1 if array[0] != item
+      elsif array[mid_point] == item
+        index = mid_point + before
       end
+
+    elsif array[mid_point] > item
+      after += array[mid_point...-1].length
+      array = array[0..mid_point]
+      mid_point = array.length / 2
+    elsif array[mid_point] < item
+      before += array[0...mid_point].length
+      array = array[mid_point..-1]
+      mid_point = array.length / 2
     end
   end
-  puts "#{item} has been found, index is: #{index}"
+
+  index
 end
 
-binary_search([1, 2, 3, 4, 5], 2)
+puts "2 is in [1,2,3,4,5] at index 1: #{binary_search([1, 2, 3, 4, 5], 2) == 1}"
+puts "61 is in [1,3,6,8,9,21,33,46,58,61,89,91] at index 9: #{binary_search([1,3,6,8,9,21,33,46,58,61,89,91], 61) == 9}"
